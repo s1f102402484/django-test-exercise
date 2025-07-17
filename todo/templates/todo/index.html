@@ -6,6 +6,7 @@
     <title>To Do Application</title>
     <meta charset="UTF-8">
     <meta name="author" content="INIAD">
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/css/style.css'%}">
   </head>
 
   <body>
@@ -32,6 +33,11 @@
       <a href="{% url 'index' %}?order=due">Sort by Due Date</a> |
       <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
     </div>
+
+  <form action="{% url 'delete_complete' %}" method="post" style="display:inline">
+    {% csrf_token %}
+    <button type="submit">Delete completed task</button>
+  </form>
 
     {% for task in tasks %}
     <div class="text">

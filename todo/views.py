@@ -127,3 +127,13 @@ def close_ja(request, task_id):
     task.completed = True
     task.save()
     return redirect(index_ja)
+
+def delete_complete(request):
+    if request.method == "POST":
+        Task.objects.filter(completed=True).delete()
+    return redirect('index')
+
+def delete_complete_ja(request):
+    if request.method == "POST":
+        Task.objects.filter(completed=True).delete()
+    return redirect('index_ja')

@@ -6,6 +6,7 @@
     <title>To Do Application</title>
     <meta charset="UTF-8">
     <meta name="author" content="INIAD">
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/css/style.css'%}">
   </head>
 
   <body>
@@ -29,9 +30,14 @@
     <br>
 
     <div>
-      <a href="{% url 'index_ja' %}?order=due">提出期限順</a> |
-      <a href="{% url 'index_ja' %}?order=post">投稿日時順</a>
+      <a href="{% url 'index_ja' %}?order=due">提出期限順</a>|
+      <a href="{% url 'index_ja' %}?order=post"> 投稿日時順</a>
     </div>
+
+    <form action="{% url 'delete_complete_ja' %}" method="post" style="display:inline">
+        {% csrf_token %}
+        <button type="submit">完了した課題の削除</button>
+    </form>
 
     {% for task in tasks %}
     <div class="text">
