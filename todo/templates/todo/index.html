@@ -32,6 +32,11 @@
       <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
     </div>
 
+  <form action="{% url 'delete_complete' %}" method="post" style="display:inline">
+    {% csrf_token %}
+    <button type="submit">Delete completed task</button>
+  </form>
+
     {% for task in tasks %}
     <div class="text">
       <h2><a href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
