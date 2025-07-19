@@ -26,4 +26,10 @@ urlpatterns = [
     path('<int:task_id>/update',todo_views.update, name='update'),
     path('<int:task_id>/close', todo_views.close, name='close'),
     path('delete_complete/', todo_views.delete_complete, name='delete_complete'),
+    path('ja/', todo_views.index_ja, name='index_ja'),
+    path('<int:task_id>/ja/', todo_views.detail_ja, name='detail_ja'),
+    path('<int:task_id>/dalete/ja/',todo_views.delete_ja,name='delete_ja'),
+    path('<int:task_id>/update/ja/',todo_views.update_ja, name='update_ja'),
+    path('<int:task_id>/close/ja/', todo_views.close_ja, name='close_ja'),
+    path('delete_complete/ja/', todo_views.delete_complete_ja, name='delete_complete_ja'),
 ]
