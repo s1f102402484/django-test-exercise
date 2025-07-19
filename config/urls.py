@@ -32,5 +32,5 @@ urlpatterns = [
     path('<int:task_id>/dalete/ja/',todo_views.delete_ja,name='delete_ja'),
     path('<int:task_id>/update/ja/',todo_views.update_ja, name='update_ja'),
     path('<int:task_id>/close/ja/', todo_views.close_ja, name='close_ja'),
-    path('delete_complete/ja/', todo_views.delete_complete, name='delete_complete_ja'),
+    path('delete_complete/ja/', todo_views.delete_complete_ja, name='delete_complete_ja'),
 ]
